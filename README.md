@@ -10,7 +10,23 @@ I highly recommend for anybody interested in electronics or computers to check o
 
 # Physical Hardware Design
 ## SAP-1 Architecture
+<img width="720" height="600" alt="image" src="https://github.com/user-attachments/assets/a156d487-a3d1-4b97-9c67-911a08165c6c" />
 
+Here is a high-level diagram of the SAP-1 architecture that makes up the 8-bit computer. Meant to be Simple As Possible (SAP), it is a very valuable educational design that implements the most crucial parts needed for a computer.
+
+The parts of the computer are:
+
+| Component | Description |
+|------------|-------------|
+| **Program Counter (PC)** | Stores the address of the next instruction to be fetched and increments after each instruction. |
+| **Memory Address Register (MAR)** | Holds the memory address used to access RAM. |
+| **Random Access Memory (RAM)** | Stores both program instructions and data in memory. |
+| **Instruction Register (IR)** | Stores the current instruction. |
+| **Control Unit** | Decodes instructions and generates the control signals that coordinate CPU execution. |
+| **Accumulator (A Register)** | Stores operands and intermediate results for arithmetic operations. |
+| **Arithmetic Logic Unit (ALU)** | Performs 8-bit addition and subtraction operations. |
+| **B Register** | Holds the second operand supplied to the ALU during arithmetic operations. |
+| **Output Register** | Stores the final result before it is sent to the display to be displayed in decimal. |
 # Breadboard Implementation
 
 # Python Based Assembler
