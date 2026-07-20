@@ -31,6 +31,10 @@ The parts of the computer are:
 ## Schematics
 Refer to [Ben Eater's website ](https://eater.net/8bit/schematics) where you can find detailed schematics for each part of the computer. As well as see a complete parts list for the build.
 
+## SAP-1 Instruction Set Architecture (ISA) 
+The stock design is able to perform basic operations including:
+
+
 # Breadboard Implementation
 
 # Python Based Assembler
