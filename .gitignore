@@ -1,0 +1,26 @@
+# Vivado
+.cache/
+.hw/
+.ip_user_files/
+.sim/
+.runs/
+.gen/
+.Xil/
+
+*.jou
+*.log
+*.str
+*.pb
+*.wdb
+*.wcfg
+*.tmp
+
+Ben Eater 8Bit Computer.cache
+Ben Eater 8Bit Computer.hw
+Ben Eater 8Bit Computer.ip_user_files
+Ben Eater 8Bit Computer.sim
+Ben Eater 8Bit Computer.xpr
+
+# OS
+.DS_Store
+Thumbs.db
