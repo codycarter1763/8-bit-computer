@@ -27,6 +27,14 @@ The parts of the computer are:
 | **Arithmetic Logic Unit (ALU)** | Performs 8-bit addition and subtraction operations. |
 | **B Register** | Holds the second operand supplied to the ALU during arithmetic operations. |
 | **Output Register** | Stores the final result before it is sent to the display to be displayed in decimal. |
+
+## Schematics
+Refer to [Ben Eater's website ](https://eater.net/8bit/schematics) where you can find detailed schematics for each part of the computer. As well as see a complete parts list for the build.
+
+## SAP-1 Instruction Set Architecture (ISA) 
+The stock design is able to perform basic operations including:
+
+
 # Breadboard Implementation
 
 # Python Based Assembler
