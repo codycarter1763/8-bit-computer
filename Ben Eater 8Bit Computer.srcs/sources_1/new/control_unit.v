@@ -39,7 +39,8 @@ module control_unit(
             OI,
             CE,
             CO,
-            J
+            J, 
+            FI
     );
     
     localparam 
@@ -57,7 +58,8 @@ module control_unit(
             OI_CODE = 16'h0010,
             CE_CODE = 16'h0008,
             CO_CODE = 16'h0004,
-            J_CODE = 16'h0002;
+            J_CODE  =  16'h0002,
+            FI_CODE = 16'h0001;
             
      localparam 
             NOP = 4'h0,
@@ -67,6 +69,8 @@ module control_unit(
             STA = 4'h4,
             LDI = 4'h5,
             JMP = 4'h6,
+            JC_INST = 4'h7,
+            JZ_INST = 4'h8,
             OUT = 4'he,
             HLT_INST = 4'hf;
             
@@ -104,7 +108,7 @@ module control_unit(
         microcode[ADD][1] = RO_CODE | II_CODE | CE_CODE;
         microcode[ADD][2] = IO_CODE | MI_CODE;
         microcode[ADD][3] = RO_CODE | BI_CODE;
-        microcode[ADD][4] = SUM_CODE | AI_CODE;
+        microcode[ADD][4] = SUM_CODE | AI_CODE | FI_CODE;
         microcode[ADD][5] = 16'h0000;
         microcode[ADD][6] = 16'h0000;
         microcode[ADD][7] = 16'h0000;
@@ -114,7 +118,7 @@ module control_unit(
         microcode[SUB][1] = RO_CODE | II_CODE | CE_CODE;
         microcode[SUB][2] = IO_CODE | MI_CODE;
         microcode[SUB][3] = RO_CODE | BI_CODE;
-        microcode[SUB][4] = SUM_CODE | AI_CODE | SU_CODE;
+        microcode[SUB][4] = SUM_CODE | AI_CODE | SU_CODE | FI_CODE;
         microcode[SUB][5] = 16'h0000;
         microcode[SUB][6] = 16'h0000;
         microcode[SUB][7] = 16'h0000;
@@ -140,6 +144,26 @@ module control_unit(
         microcode[LDI][7] = 16'h0000;
         
         // JMP
+        microcode[JMP][0] = CO_CODE | MI_CODE;
+        microcode[JMP][1] = RO_CODE | II_CODE | CE_CODE;
+        microcode[JMP][2] = IO_CODE | J_CODE;
+        microcode[JMP][3] = 16'h0000;
+        microcode[JMP][4] = 16'h0000;
+        microcode[JMP][5] = 16'h0000;
+        microcode[JMP][6] = 16'h0000;
+        microcode[JMP][7] = 16'h0000;
+        
+        // JC
+        microcode[JMP][0] = CO_CODE | MI_CODE;
+        microcode[JMP][1] = RO_CODE | II_CODE | CE_CODE;
+        microcode[JMP][2] = IO_CODE | J_CODE;
+        microcode[JMP][3] = 16'h0000;
+        microcode[JMP][4] = 16'h0000;
+        microcode[JMP][5] = 16'h0000;
+        microcode[JMP][6] = 16'h0000;
+        microcode[JMP][7] = 16'h0000;
+        
+        // JZ
         microcode[JMP][0] = CO_CODE | MI_CODE;
         microcode[JMP][1] = RO_CODE | II_CODE | CE_CODE;
         microcode[JMP][2] = IO_CODE | J_CODE;

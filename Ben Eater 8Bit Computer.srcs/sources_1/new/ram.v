@@ -42,11 +42,11 @@ module ram(
     
     reg [7:0] memory [0:15];
     initial begin
-        memory[0]  = {LDI, 4'd7};   // LDI 7
-        memory[1]  = {ADD, 4'd15};  // ADD 15
-        memory[2]  = {OUT, 4'd0};   // OUT
-        memory[3]  = {HLT, 4'd0};   // HLT
-        memory[4]  = 8'h00;
+        memory[0]  = {LDI, 4'd3};   // LDI 3
+        memory[1]  = {STA, 4'd15};  // STA 15
+        memory[2]  = {LDI, 4'd0};   // LDI 0
+        memory[3]  = {ADD, 4'd15};  // ADD 15
+        memory[4]  = {OUT, 4'd0};   // OUT
         memory[5]  = 8'h00;
         memory[6]  = 8'h00;
         memory[7]  = 8'h00;
@@ -57,8 +57,8 @@ module ram(
         memory[12] = 8'h00;
         memory[13] = 8'h00;
 
-        memory[14] = 8'h0A;   // First operand
-        memory[15] = 8'h04;   // Second operand
+        memory[14] = 8'h00;   // First operand
+        memory[15] = 8'h00;   // Second operand
     end
     always @(posedge clk) begin
         if (ri)
